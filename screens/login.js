@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import {
   View,
@@ -48,6 +47,11 @@ export default function Login({ navigation }) {
         onChangeText={setPassword}
       />
 
+
+      <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
+        <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
+      </TouchableOpacity>
+
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
@@ -63,6 +67,7 @@ export default function Login({ navigation }) {
     </View>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -82,6 +87,12 @@ const styles = StyleSheet.create({
     padding: 12,
     marginBottom: 10,
     borderRadius: 8,
+  },
+  forgotPasswordText: {
+    color: '#3D8BFF',
+    textAlign: 'right',
+    marginBottom: 10,
+    fontWeight: 'bold',
   },
   button: {
     backgroundColor: '#3D8BFF',
